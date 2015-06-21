@@ -27,10 +27,10 @@ int main()
     cin>>charges;
     cout<<"Enter credits for the month"<<endl;
     cin>>credits;
-
     balance[0][index] = balance[0][index] + charges - credits;
-    if(balance[0][index] < balance[1][index])
-    cout<<"Balance: "<<balance[0][index]<<endl;
+    cout<<"new Balance "<<balance[0][index]<<endl;
+    if(balance[0][index] > balance[1][index])
+    cout<<"Account Number: "<<index<<", Credit Limit: "<<crLimit<< ", New Balance: "<<balance[0][index]<< ", Credit Limit Exceeded"<<endl;
     }
     return 0;
 }
