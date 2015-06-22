@@ -21,14 +21,13 @@ int main()
     cout<<"enter second number"<<endl;
     cin>>num2;
     cout<<"The first number is: " << num1 << " and the second number is: "<< num2 <<endl;
-    swap(&num1, &num2);
+    swap(&num1, &num2);   //parameters passed as referencce so that values of the variables num1 and num2 will be swapped
     cout<<"The first number is now: " << num1 << " and the second number is now: "<< num2 <<endl;
     return 0;
 }
 
-void swap(int *a, int *b){  //parameters passed as referencce so that values of the variables num1 and num2 will be swapped
-    int *temp;
-    temp = a;
+void swap(int *a, int *b){  //pointers used as paramters
+    int temp = *a;     //to store value of a
     *a = *b;
-    *b = *temp;
+    *b = temp;
 }
