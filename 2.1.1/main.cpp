@@ -9,25 +9,25 @@ out the values stored in the two variables */
 
 using namespace std;
 
-void swap(int a, int b);
-
+void swap(int &a, int &b);
 
 int main()
 {
-    int num1, num2;
+    int num1, num2;//
     cout<<"enter first number"<<endl;
     cin>>num1;
     cout<<"enter second number"<<endl;
     cin>>num2;
     cout<<"The first number is: " << num1 << " and the second number is: "<< num2 <<endl;
     swap(num1, num2);
+    cout<<"The first number is now: " << num1 << " and the second number is now: "<< num2 <<endl;
     return 0;
 }
 
-void swap(int a, int b){
+void swap(int &a, int &b){
     int temp = a;
     a = b;
     b = temp;
-    cout<<"The first number is now: " << a << " and the second number is now: "<< b <<endl;
+
 
 }
