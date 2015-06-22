@@ -5,11 +5,13 @@ in two separate variables. The program should then output the values stored in t
 variables to the screen, swap the two numbers by calling swap, and then again print
 out the values stored in the two variables */
 
+//This version changes the actal variable values as well as printing them out
+
 #include <iostream>
 
 using namespace std;
 
-void swap(int &a, int &b);
+void swap(int *a, int *b);   //declaration of method
 
 int main()
 {
@@ -19,15 +21,14 @@ int main()
     cout<<"enter second number"<<endl;
     cin>>num2;
     cout<<"The first number is: " << num1 << " and the second number is: "<< num2 <<endl;
-    swap(num1, num2);
+    swap(&num1, &num2);
     cout<<"The first number is now: " << num1 << " and the second number is now: "<< num2 <<endl;
     return 0;
 }
 
-void swap(int &a, int &b){
-    int temp = a;
-    a = b;
-    b = temp;
-
-
+void swap(int *a, int *b){  //parameters passed as referencce so that values of the variables num1 and num2 will be swapped
+    int *temp;
+    temp = a;
+    *a = *b;
+    *b = *temp;
 }
