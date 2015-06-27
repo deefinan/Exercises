@@ -15,25 +15,26 @@ a tabulated format, the percentage of times each pair of values occurs. */
 using namespace std;
 
 int main(){
-   srand(NULL);
-   int rollDice();
+   srand(NULL);    //set seed for random using clock
+   int rollDice();    //declare methods
    int findNumDigits(int num);
    int numRolls, total;
 
-   int totalVals [11] = {0,0,0,0,0,0,0,0,0,0,0};
+   int totalVals [11] = {0,0,0,0,0,0,0,0,0,0,0};  //initialise array to zero
    cout<<"How many rolls would you like"<<endl;;
    cin>>numRolls;
-   int width = findNumDigits(numRolls);
+   int width = findNumDigits(numRolls);  //needed to get correct tab width for print out
 
 
 
    for(int i = 0; i < numRolls; i++){
 
-      total = rollDice();
-      totalVals[total-2]++;
+      total = rollDice();      //combined total of dice
+      totalVals[total-2]++;    //array has only 11 slots 0 - 10, totals range from 2 - 12
    }
     for(int i = 0; i < 11; i++){
         cout<<"The value "<<setw(2)<< (i + 2)<< " appears "<<setw(width)<<totalVals[i] <<" times"<<endl;
+        //add 2 back on to index to get correct total
     }
 
     return 0;
@@ -49,7 +50,7 @@ int findNumDigits(int num){
     int count = 0;
     while(num >= 1){
             count++;
-            num = num/10;
+            num = num/10;  //reduce number of digits left by 1
     }
     return count;
 }
